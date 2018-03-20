@@ -16,7 +16,9 @@ session_start();
    </script>
    <script>
   $( function() {
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker({
+        dateFormat: 'yy-mm-dd'
+        });
   } );
   </script>
  </head>
@@ -50,7 +52,7 @@ session_start();
            <?php include 'schedule.php';?>
          </form>
         </div>
-
+      </div>
       <div id="tabs-2">
         <h4>Be the best teacher you can be.</h4>
         <p> Make use of our detailed reports to see information about your classes.</p>

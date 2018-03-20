@@ -1,14 +1,15 @@
 <?php
 
-if(isset($_POST["submit"]))
+if(isset($_POST["sched"]))
 {
+  echo "this worked";
   $servername = "db.cs.dal.ca";
   $username = "manuele";
   $password = "B00559291";
   $dbname = "manuele";
 
   $date=$_POST['date'];
-
+  echo $date;
   if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
   }
@@ -23,7 +24,7 @@ if(isset($_POST["submit"]))
     </thead>
     <tbody>";
 
-  $q = "select * from Schedule where Date = $date;";
+  $q = "select * from Schedule where Date = '$date';";
   $r = $conn->query($q);
 
   while($rw=mysqli_fetch_assoc($r))
