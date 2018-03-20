@@ -15,7 +15,12 @@ if(isset($_POST["sched"]))
   if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
   }
-  echo"<table>
+
+  $query = "select * from Schedule where Date = '$date';";
+  $result = $conn->query($query);
+
+  if($result->num_rows > 0){ //if the query has results
+   echo"<table>
     <thead>
       <tr>
         <th>Time</th>
@@ -24,18 +29,21 @@ if(isset($_POST["sched"]))
       </tr>
     </thead>
     <tbody>";
-  $query = "select * from Schedule where Date = '$date';";
-  $result = $conn->query($query);
-  while($row=mysqli_fetch_assoc($result))
-  {
-    echo "<tr>
+
+    while($row=mysqli_fetch_assoc($result))
+    {
+     echo "<tr>
       <td>$row[Block_ID]
       <td>$row[Class_Code]
       <td>Teacher_Name_here
       </tr>";
-  }
-  echo "</tbody>
+    }
+    echo "</tbody>
       </table>";
+  }
+  else{
+    echo "Oops! There are no classes scheduled on " . $date;
+  }
  $conn->close();
 }
  ?>
