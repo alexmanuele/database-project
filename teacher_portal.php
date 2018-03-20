@@ -20,6 +20,11 @@ session_start();
         dateFormat: 'yy-mm-dd'
         });
   } );
+  $( function() {
+    $( "#datepicker2" ).datepicker({
+        dateFormat: 'yy-mm-dd'
+        });
+  } );
   </script>
  </head>
  <body>
@@ -43,6 +48,7 @@ session_start();
         <li><a href="#tabs-2">Statistics</a></li>
       </ul>
       <div id="tabs-1">
+       <div class="form-container">
         <div>
          <h4>Choose a date to see the schedule.</h4>
          <form id="schedule" method="post">
@@ -53,6 +59,14 @@ session_start();
            <?php include 'schedule.php';?>
          </form>
         </div>
+        <div>
+          <h4>Add a new class to the schedule!</h4>
+          <form id="class-add" method="post">
+            <input type="text" id="datepicker2" name="date">
+            <br><br>
+          </form>
+        </div>
+       </div>
       </div>
       <div id="tabs-2">
         <h4>Be the best teacher you can be.</h4>

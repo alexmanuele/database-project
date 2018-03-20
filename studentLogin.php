@@ -18,7 +18,7 @@ if(isset($_POST["login"]))
 
 
  // Check connection
- if ($conn->connect_error) {e back,
+ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
  }
  //echo $studentID . "<br>";
@@ -38,6 +38,7 @@ if(isset($_POST["login"]))
  //check password and go to student portal if it is correct
  if(strcmp($confirmPass, $loginpassword) == 0 && $loginpassword != ""){
    header('Location: student_portal.php');
+   exit();
  }
  else echo "Incorrect Username or Password.";
 

@@ -93,7 +93,7 @@ nav ul{
 }
 .form-container{
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
 }
 .tabcontent {
   color: black;
@@ -114,9 +114,22 @@ nav ul{
   width: 25%;
   font: Helvetica;
 }
-/*#message{
-  display: none;
-}*/
+
+th {
+  background-color: cadetblue;
+  color: white;
+}
+th, td{
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid cadetblue;
+}
+tr:nth-child(even){
+  background-color: #93C5C7;
+
+}
+
+
 footer{
   margin-top: 0rem;
   padding: 5em 0;
