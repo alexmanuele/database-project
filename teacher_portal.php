@@ -47,9 +47,7 @@ session_start();
            Date: <input type="text" id="datepicker" name="date">
            <br><br>
            <input type="submit" value="See Schedule" name="sched">
-           <div>
-             <?php include 'schedule.php';?>
-           </div>
+           <?php include 'schedule.php';?>
          </form>
         </div>
 

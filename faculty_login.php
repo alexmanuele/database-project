@@ -2,7 +2,7 @@
 session_start();
 if(isset($_POST["stafflogin"]))
 {
-  echo "This worked";
+  
  $facultyusername =$_POST['staffname'];
  $loginpassword=$_POST['staffpassword'];
  $staff_type=$_POST['stafftype'];

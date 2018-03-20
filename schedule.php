@@ -21,9 +21,9 @@ if(isset($_POST["submit"]))
         <th>Teacher</th>
       </tr>
     </thead>
-    <tbody>"
+    <tbody>";
 
-  $q = "select * from Schedule where Date = $date;"
+  $q = "select * from Schedule where Date = $date;";
   $r = $conn->query($q);
 
   while($rw=mysqli_fetch_assoc($r))
