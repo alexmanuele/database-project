@@ -1,6 +1,3 @@
-<?php
-session_start();
- ?>
 <!DOCTYPE html>
 <html>
  <head>
@@ -40,7 +37,6 @@ $( function() {
       </ul>
      <div id="tabs-1">
        First name:<br>
-     <form id="register" method= 'post'>
       <input type="text" name="firstname"><br>
       Last name:<br>
       <input type="text" name="lastname"><br>
@@ -56,7 +52,7 @@ $( function() {
       Password: <br>
       <input type="text" name="signuppassword"><br><br>
       <input type="submit" value="Submit" name="submit">
-      <?php include 'register.php';?>
+    <!--  <?php include 'register.php';?> -->
      </form>
      </div>
      <div id="tabs-2">
@@ -67,7 +63,7 @@ $( function() {
          Password:<br>
          <input type="text" name="studentpassword"><br><br>
          <input type="submit" value="Login" name="login">
-         <?php include 'studentLogin.php';?>
+         <!--<?php include 'studentLogin.php';?> -->
         </form>
      </div>
      <div id="tabs-3">
@@ -84,7 +80,7 @@ $( function() {
            <option value="2">Management</option>
          </select>
          <input type="submit" value="Login" name="stafflogin">
-         <?php include 'faculty_login.php';?>
+         <!--<?php include 'faculty_login.php';?> -->
         </form>
      </div>
     </div>

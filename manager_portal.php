@@ -1,5 +1,5 @@
 <?php
- session_start();
+session_start();
  ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@
    <div class="header"> <!-- title header -->
      <div class="container">
       <!--  <img src="resources/logo.png"> -->
-        <span>Welcome to the Bhakti Membership page.</span>
+        <span>Welcome to the Management page. Your business, at your fingertips.</span>
      </div>
     </div>
     <div class="banner"> <!--banner -->
@@ -37,20 +37,16 @@
     </div> <!-- end of banner -->
   <div id="tabs">
       <ul>
-        <li><a href="#tabs-1">Classes</a></li>
-        <li><a href="#tabs-2">Membership</a></li>
+        <li><a href="#tabs-1">Manage Classes</a></li>
+        <li><a href="#tabs-2">Statistics</a></li>
       </ul>
       <div id="tabs-1">
-        <div class="container">
-          <div class="calendar">
-            <p>Select a date to register for a class: <input type="text" id="datepicker"></p>
-         </div>
-         <div class="schedule">
-           <p>The schedule will go here hopefully</p>
-         </div>
-       </div>
+        <h4>Choose a date to add a class.</h4>
+        <p>Date: <input type="text" id="datepicker"></p>
+      </div>
       <div id="tabs-2">
-        Change membership status
+        <h4>Be the best teacher you can be.</h4>
+        <p> Make use of our detailed reports to see information about your classes.</p>
       </div>
   </div>
   <footer>

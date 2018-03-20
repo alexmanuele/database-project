@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 function generateStudentNum()
 {
     static $studentNumber = 1000100;
@@ -8,19 +10,19 @@ function generateStudentNum()
 
 if(isset($_POST["submit"]))
 {
-  $studNum = generateStudentNum();
-  $firstname=$_POST['firstname']; //can retrieve data using $_POST from the post method used above
 
-  $lastname=$_POST['lastname'];
-  $middlename=$_POST['middlename'];
-  $signuppassword=$_POST['signuppassword'];
+ $studNum = generateStudentNum();
 
+ $firstname=$_POST['firstname']; //can retrieve data using $_POST from the post method used above
+ $lastname=$_POST['lastname'];
+ $signupname=$_POST['username'];
+ $signuppassword=$_POST['signuppassword'];
+ $membership=$_POST['membership'];
 
   $servername = "db.cs.dal.ca";
   $username = "manuele";
   $password = "B00559291";
   $dbname = "manuele";
-
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -32,13 +34,13 @@ if(isset($_POST["submit"]))
   }
 
 //SQL Query
-  $sql = "INSERT INTO Student (Student_Number, Student_FName, Student_MName, Student_LName, Student_Password)
-  VALUES ('$studNum', '$firstname', '$middlename', '$lastname', '$signuppassword')"; //use the vars as values for the Query
+  $sql = "INSERT INTO Student (Student_Number, Student_Username, Student_FName, Student_LName, Student_Password, Membership_ID)
+  VALUES ('$studNum', '$signupname', '$firstname', '$lastname', '$signuppassword', '$membership')"; //use the vars as values for the Query
 
   $result = $conn->query($sql);
 
   if ($result === TRUE) {
-     echo "<p id='message'>Congratulations, You've successfully signed up! <br><br>Your student ID is " . $studNum . "<br></p>";
+     echo "<p id='message'>Congratulations, You've successfully signed up! <br><br>Your user name is " . $signupname . "<br></p>";
   } else {
      echo "<p id='message'>Error: " . $sql . "<br>" . $conn->error . "</p>";
   }

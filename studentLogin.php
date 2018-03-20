@@ -1,7 +1,10 @@
 <?php
+session_start();
+
 if(isset($_POST["login"]))
 {
- $studentID =$_POST['studentid'];
+
+ $studentusername =$_POST['membername'];
  $loginpassword=$_POST['studentpassword'];
 
  $servername = "db.cs.dal.ca";
@@ -15,16 +18,18 @@ if(isset($_POST["login"]))
 
 
  // Check connection
- if ($conn->connect_error) {
+ if ($conn->connect_error) {e back,
     die("Connection failed: " . $conn->connect_error);
  }
  //echo $studentID . "<br>";
- $sql = "SELECT Student_Password FROM Student WHERE Student_Number = '$studentID';";
+ $sql = "SELECT Student_Password FROM Student WHERE Student_Username = '$studentusername';";
  $result = $conn->query($sql);
  if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         $confirmPass = $row["Student_Password"];
+        $_SESSION["firstname"] = $row["Student_FName"];
+        $_SESSION["memberusername"] = $row["Student_Username"];
     }
 } else {
     echo "Error <br>";
