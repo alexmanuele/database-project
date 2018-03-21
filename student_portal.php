@@ -32,7 +32,7 @@
       <div class="container">
         <div class="headline">
           <h4>Welcome back,</h4>
-          <h1><?php echo $_SESSION["firstname"]?></h1>
+          <h1><?php echo $_SESSION["firstname"] ."!"?></h1>
         </div>
       </div>
     </div> <!-- end of banner -->

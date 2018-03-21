@@ -38,7 +38,7 @@ session_start();
       <div class="container">
         <div class="headline">
           <h4>Welcome back,</h4>
-          <h1><?php echo $_SESSION["firstname"]?></h1>
+          <h1><?php echo $_SESSION["firstname"]."!"?></h1>
         </div>
       </div>
     </div> <!-- end of banner -->
@@ -64,6 +64,15 @@ session_start();
           <form id="class-add" method="post">
             <input type="text" id="datepicker2" name="date">
             <br><br>
+            <select name="class-time" method="post">
+              <option value="">Choose a time..</option>
+              <option value="1">6:00am-8:30am</option>
+              <option value="2">9:00am-10:30am</option>
+              <option value="3">11:00am-12:30pm</option>
+              <option value="4">1:00pm-2:30pm</option>
+              <option value="5">3:00pm-4:30pm</option>
+            </select>
+            <?php include 'class_selection.php' ?>
           </form>
         </div>
        </div>

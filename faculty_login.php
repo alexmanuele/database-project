@@ -24,7 +24,7 @@ if(isset($_POST["stafflogin"]))
 
  if($staff_type === "1"){
 
-  $sql = "SELECT Teacher_Password, Teacher_FName, Teacher_Username FROM Teacher WHERE Teacher_Username = '$facultyusername';";
+  $sql = "SELECT * FROM Teacher WHERE Teacher_Username = '$facultyusername';";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
     // output data of each row
@@ -32,6 +32,7 @@ if(isset($_POST["stafflogin"]))
         $confirmPass = $row["Teacher_Password"];
         $_SESSION["firstname"] = $row["Teacher_FName"];
         $_SESSION["staffusername"] = $row["Teacher_Username"];
+        $_SESSION['staffid'] = $row["Teacher_ID"];
     }
   } else {
     echo "Error <br>";
