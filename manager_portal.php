@@ -27,6 +27,14 @@ session_start();
         dateFormat: 'yy-mm-dd'
         });
   } );
+  $( function() {
+    $( "#datepicker3" ).datepicker({
+        dateFormat: 'yy-mm-dd'
+        });
+  } );
+  $( function() {
+   $( "#accordion" ).accordion();
+ } );
   </script>
  </head>
  <body>
@@ -64,10 +72,10 @@ session_start();
           <?php include 'schedule.php';?>
         </form>
        </div>
-       <div>
-         <h4>Add or remove classes.</h4>
-         You only need to select a class type if adding a class.
-         <form id="class-add" method="post">
+       <div id="accordion">
+         <h4>Add classes to the schedule.</h4>
+         <div>
+          <form id="class-add" method="post">
            <input type="text" id="datepicker2" name="date">
            <br><br>
            <select name="class-time" method="post">
@@ -81,23 +89,33 @@ session_start();
            <?php include 'class_selection.php' ?>
            <br><br>
            <input type="submit" value="Add class" name="add-class">
-           <input type="submit" value="Remove class" name="remove-class">
          </form>
        </div>
-       <div>
-         <h4> Add new types of classes or remove existing ones. </h4>
-         <form id="rm-classtype" method="post">
-           <?php include 'class_selection.php' ?>
-           <br><br>
-           <input type="submit" value="Remove" name="remove-classtype">
-         </form>
-         <br>
-         <form id="add-classtype" method="post">
-           Add a new class.
-           <input type="text" name="newclass">
-           <br><br>
-           <input type="submit" value="Add class" name="add-classtype">
-         </form>
+         <h4>Remove classes from the schedule.</h4>
+         <div>
+            <form id="class-rm" method="post">
+              <input type="text" id="datepicker3" name="date">
+              <br><br>
+            </form>
+         </div>
+         <h4> Add a new type of class. </h4>
+         <div>
+            <form id="add-classtype" method="post">
+              <input type="text" name="newclass">
+              <br><br>
+              <input type="submit" value="Add class" name="add-classtype">
+            </form>
+         </div>
+         <h4> Remove an existing class type. </h4>
+         <div>
+           <p> Warning: Removing a class type will remove all classes of that type
+             from the schedule!</p>
+           <form id="rm-classtype" method="post">
+             <?php include 'class_selection.php' ?>
+             <br><br>
+             <input type="submit" value="Remove" name="remove-classtype">
+           </form>
+         </div>
       </div>
     </div>
   </div>
