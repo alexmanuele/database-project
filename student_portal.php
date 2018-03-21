@@ -1,6 +1,9 @@
 <?php
 if(!session_id())
   session_start();
+  if($_SESSION['studentlogin'] != 1){
+    header('Location: index.php');
+  }
  $name = $_SESSION['firstname'];
  ?>
 <!DOCTYPE html>
@@ -19,9 +22,11 @@ if(!session_id())
      } );
    </script>
    <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
+   $( function() {
+     $( "#datepicker" ).datepicker({
+         dateFormat: 'yy-mm-dd'
+         });
+   } );
   </script>
  </head>
  <body>
@@ -47,13 +52,21 @@ if(!session_id())
       </ul>
       <div id="tabs-1">
         <div class="container">
-          <div class="calendar">
-            <p>Select a date to register for a class: <input type="text" id="datepicker"></p>
-         </div>
-         <div class="schedule">
-           <p>The schedule will go here hopefully</p>
-         </div>
+          <div>
+           <h4>Choose a date to see the schedule and sign up!</h4>
+           <form id="schedule" method="post">
+             Date: <input type="text" id="datepicker" name="date" required>
+             <br><br>
+             <input type="submit" value="See Schedule" name="sched">
+             <br><br>
+             <?php include 'schedule.php';?>
+           </form>
+          </div>
+          <div>
+              <?php include 'course_signup.php'?>
+          </div>
        </div>
+     </div>
       <div id="tabs-2">
         Change membership status
       </div>
@@ -64,6 +77,7 @@ if(!session_id())
         <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
         <li><a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
         <li><a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram fa-lg"></i></a></li>
+        <li><a href="logout.php">Log out</a></li>
       <ul>
     </nav>
   </footer>

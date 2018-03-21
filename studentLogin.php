@@ -37,6 +37,7 @@ if(isset($_POST["login"]))
 
  //check password and go to student portal if it is correct
  if(strcmp($confirmPass, $loginpassword) == 0 && $loginpassword != ""){
+   $_SESSION['studentlogin'] = 1;
    header('Location: student_portal.php');
    exit();
  }

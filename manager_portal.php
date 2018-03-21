@@ -192,6 +192,7 @@ if(!session_id())
         <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
         <li><a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
         <li><a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram fa-lg"></i></a></li>
+        <li><a href="logout.php">Log out</a></li>
       <ul>
     </nav>
   </footer>
