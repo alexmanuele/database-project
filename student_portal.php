@@ -27,6 +27,7 @@
    <div class="header"> <!-- title header -->
      <div class="container">
       <!--  <img src="resources/logo.png"> -->
+        <i class="fa fa-fire fa-lg"></i>
         <span>Welcome to the Bhakti Membership page.</span>
      </div>
     </div>

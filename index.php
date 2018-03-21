@@ -22,6 +22,7 @@ $( function() {
    <div class="header"> <!-- title header -->
      <div class="container">
       <!--  <img src="resources/logo.png"> -->
+      <i class="fa fa-fire fa-lg"></i>
         <span>Bhakti Yoga: Wellness by the Seaside.</span>
      </div>
     </div>
