@@ -137,6 +137,7 @@ session_start();
               <input type="text" name="tacherpassword">
               <br><br>
               <input type="submit" value="Add new teacher" name="add-teacher">
+              <?php include 'add_teacher.php'; ?>
             </form>
           </div>
           <div>

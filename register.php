@@ -40,9 +40,9 @@ if(isset($_POST["submit"]))
   $result = $conn->query($sql);
 
   if ($result === TRUE) {
-     echo "<p id='message'>Congratulations, You've successfully signed up! <br><br>Your user name is " . $signupname . "<br></p>";
+    echo "<script> window.alert('Congratulations, you successfully signed up!');</script>";
   } else {
-     echo "<p id='message'>Error: " . $sql . "<br>" . $conn->error . "</p>";
+     echo "<script> window.alert('Something went wrong.');</script>";
   }
 
   $conn->close();
