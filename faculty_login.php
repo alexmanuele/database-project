@@ -2,7 +2,7 @@
 session_start();
 if(isset($_POST["stafflogin"]))
 {
-  
+
  $facultyusername =$_POST['staffname'];
  $loginpassword=$_POST['staffpassword'];
  $staff_type=$_POST['stafftype'];
@@ -24,7 +24,7 @@ if(isset($_POST["stafflogin"]))
 
  if($staff_type === "1"){
 
-  $sql = "SELECT * FROM Teacher WHERE Teacher_Username = '$staffusername';";
+  $sql = "SELECT Teacher_Password, Teacher_FName, Teacher_Username FROM Teacher WHERE Teacher_Username = '$facultyusername';";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
     // output data of each row
@@ -41,7 +41,9 @@ if(isset($_POST["stafflogin"]))
   if(strcmp($confirmPass, $loginpassword) == 0 && $loginpassword != ""){
    header('Location: teacher_portal.php');
   }
-  else echo "Incorrect Username or Password.";
+  else{ echo "Incorrect Username or Password.";
+        echo $confirmPass;
+  }
 
  }else if($staff_type === "2"){
    $sql = "SELECT * FROM Manager WHERE Manager_Username = '$staffusername';";

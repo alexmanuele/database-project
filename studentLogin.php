@@ -22,7 +22,7 @@ if(isset($_POST["login"]))
     die("Connection failed: " . $conn->connect_error);
  }
  //echo $studentID . "<br>";
- $sql = "SELECT Student_Password FROM Student WHERE Student_Username = '$studentusername';";
+ $sql = "SELECT Student_Password, Student_FName, Student_Username FROM Student WHERE Student_Username = '$studentusername';";
  $result = $conn->query($sql);
  if ($result->num_rows > 0) {
     // output data of each row
