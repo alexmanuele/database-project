@@ -54,7 +54,7 @@ session_start();
         <div>
          <h4>Choose a date to see the schedule.</h4>
          <form id="schedule" method="post">
-           Date: <input type="text" id="datepicker" name="date">
+           Date: <input type="text" id="datepicker" name="date" required>
            <br><br>
            <input type="submit" value="See Schedule" name="sched">
            <br><br>
@@ -64,9 +64,9 @@ session_start();
         <div>
           <h4>Add a new class to the schedule!</h4>
           <form id="class-add" method="post">
-            <input type="text" id="datepicker2" name="date">
+            <input type="text" id="datepicker2" name="date" required>
             <br><br>
-            <select name="class-time" method="post">
+            <select name="class-time" method="post" required>
               <option value="">Choose a time..</option>
               <option value="1">6:00am-8:30am</option>
               <option value="2">9:00am-10:30am</option>
@@ -83,17 +83,18 @@ session_start();
           <h4>Want to try teaching a new type of class?</h4>
           <p>Ask your branch manager to add new class types!</p>
        </div>
-      </div>
+     </div>
+    </div>
       <div id="tabs-2">
         <h4>Be the best teacher you can be.</h4>
         <p> Make use of our detailed reports to see information about your classes.</p>
         <form id="class-info" method="post">
-          <select name="statistic">
+          <select name="statistic" required>
             <option value="">Show me...</option>
             <option value="1">Most popular</option>
             <option value="2">Least popular</option>
           </select>
-          <select name="subject">
+          <select name="subject" required>
             <option value="">About..</option>
             <option value="1">Class Type</option>
             <option value="2">Day of the Week</option>

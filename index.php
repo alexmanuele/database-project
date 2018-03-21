@@ -44,20 +44,20 @@ $( function() {
      <div id="tabs-1">
        First name:<br>
      <form id="register" method= 'post'>
-      <input type="text" name="firstname"><br>
+      <input type="text" name="firstname" required><br>
       Last name:<br>
-      <input type="text" name="lastname"><br>
+      <input type="text" name="lastname" required><br>
       Username: <br>
-      <input type="text" name="username"><br>
+      <input type="text" name="username" required><br>
       Select a Membership Type: <br>
-      <select name="membership">
+      <select name="membership" required>
         <option value="">Select...</option>
         <option value="1">Casual</option>
         <option value="2">Committed</option>
         <option value="3">Unlimited</option>
       </select><br>
       Password: <br>
-      <input type="text" name="signuppassword"><br><br>
+      <input type="text" name="signuppassword" required><br><br>
       <input type="submit" value="Submit" name="submit">
       <?php include 'register.php';?>
      </form>
@@ -66,9 +66,9 @@ $( function() {
        <h2>Already a member? Log in here.</h2>
        <form id='login' method='post'>
          Username:<br>
-         <input type="text" name="membername"><br>
+         <input type="text" name="membername" required><br>
          Password:<br>
-         <input type="text" name="studentpassword"><br><br>
+         <input type="text" name="studentpassword" required><br><br>
          <input type="submit" value="Login" name="login">
          <?php include 'studentLogin.php';?>
         </form>
@@ -77,11 +77,11 @@ $( function() {
        <h2>Faculty Login</h2>
        <form id='stafflogin' method='post'>
          Username:<br>
-         <input type="text" name="staffname"><br>
+         <input type="text" name="staffname" required><br>
          Password:<br>
-         <input type="text" name="staffpassword"><br><br>
+         <input type="text" name="staffpassword" required><br><br>
          Sign in as:<br>
-         <select name="stafftype">
+         <select name="stafftype" required>
            <option value="">Select...</option>
            <option value="1">Teacher</option>
            <option value="2">Management</option>

@@ -65,7 +65,7 @@ session_start();
        <div>
         <h4>See the schedule of any date.</h4>
         <form id="schedule" method="post">
-          <input type="text" id="datepicker" name="date">
+          <input type="text" id="datepicker" name="date" required>
           <br><br>
           <input type="submit" value="See Schedule" name="sched">
           <br><br>
@@ -76,9 +76,9 @@ session_start();
          <h4>Add classes to the schedule.</h4>
          <div>
           <form id="class-add" method="post">
-           <input type="text" id="datepicker2" name="date">
+           <input type="text" id="datepicker2" name="date" required>
            <br><br>
-           <select name="class-time" method="post">
+           <select name="class-time" method="post" required>
              <option value="">Choose a time..</option>
              <option value="1">6:00am-8:30am</option>
              <option value="2">9:00am-10:30am</option>
@@ -94,14 +94,14 @@ session_start();
          <h4>Remove classes from the schedule.</h4>
          <div>
             <form id="class-rm" method="post">
-              <input type="text" id="datepicker3" name="date">
+              <input type="text" id="datepicker3" name="date" required>
               <br><br>
             </form>
          </div>
          <h4> Add a new type of class. </h4>
          <div>
             <form id="add-classtype" method="post">
-              <input type="text" name="newclass">
+              <input type="text" name="newclass" required>
               <br><br>
               <input type="submit" value="Add class" name="add-classtype">
             </form>
@@ -125,16 +125,16 @@ session_start();
             <h4>Add teachers to your studio.</h4>
             <form id="add-teachers" method="post">
               Teacher First Name<br>
-              <input type="text" name="teacherfirstname">
+              <input type="text" name="teacherfirstname" required>
               <br><br>
               Teacher Last Name<br>
-              <input type="text" name="teacherlastname">
+              <input type="text" name="teacherlastname" required>
               <br><br>
               Teacher Username:<br>
-              <input type="text" name="teacherusername">
+              <input type="text" name="teacherusername" required>
               <br><br>
               Teacher Password:<br>
-              <input type="text" name="tacherpassword">
+              <input type="text" name="teacherpassword" required>
               <br><br>
               <input type="submit" value="Add new teacher" name="add-teacher">
               <?php include 'add_teacher.php'; ?>
@@ -153,12 +153,12 @@ session_start();
         <h4>Keep tabs on your business.</h4>
         <p> Make use of our database to see useful information about classes and teachers.</p>
         <form id="class-info" method="post">
-          <select name="statistic">
+          <select name="statistic" required>
             <option value="">Show me...</option>
             <option value="1">Most popular</option>
             <option value="2">Least popular</option>
           </select>
-          <select name="subject">
+          <select name="subject" required>
             <option value="">About..</option>
             <option value="1">Class Type</option>
             <option value="2">Day of the Week</option>
@@ -173,7 +173,7 @@ session_start();
         <h4>Dive in to the details.</h4>
         <p>Our system provides detailed reports so that you can run the best version of your business.</p>
         <form id="detailed" method="post">
-          <select name="details">
+          <select name="details" required>
             <option value="">Select..</option>
             <option value="1">Customer Report</option>
             <option value="2">Teacher Report</option>
