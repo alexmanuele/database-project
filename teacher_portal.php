@@ -1,5 +1,9 @@
 <?php
-session_start();
+if(!session_id())
+  session_start();
+if($_SESSION['teacherlogon'] != 1){
+  header('Location: index.php');
+}
  ?>
 <!DOCTYPE html>
 <html>

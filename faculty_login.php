@@ -1,5 +1,6 @@
 <?php
-session_start();
+if(!session_id())
+  session_start();
 if(isset($_POST["stafflogin"]))
 {
 
@@ -40,6 +41,7 @@ if(isset($_POST["stafflogin"]))
 
   //check password and go to student portal if it is correct
   if(strcmp($confirmPass, $loginpassword) == 0 && $loginpassword != ""){
+    $_SESSION["teacherlogon"] = 1;
    header('Location: teacher_portal.php');
   }
   else{ echo "Incorrect Username or Password.";
@@ -62,6 +64,7 @@ if(isset($_POST["stafflogin"]))
 
    //check password and go to student portal if it is correct
    if(strcmp($confirmPass, $loginpassword) == 0 && $loginpassword != ""){
+     $_SESSION['managerlogin'] = 1;
     header('Location: manager_portal.php');
    }
    else echo "Incorrect Username or Password.";

@@ -1,5 +1,6 @@
 <?php
-session_start();
+if(!session_id())
+  session_start();
 $servername = "db.cs.dal.ca";
 $username = "manuele";
 $password = "B00559291";
