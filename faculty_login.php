@@ -47,7 +47,7 @@ if(isset($_POST["stafflogin"]))
   }
 
  }else if($staff_type === "2"){
-   $sql = "SELECT * FROM Manager WHERE Manager_Username = '$staffusername';";
+   $sql = "SELECT * FROM Manager WHERE Manager_Username = '$facultyusername';";
    $result = $conn->query($sql);
    if ($result->num_rows > 0) {
      // output data of each row

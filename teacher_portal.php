@@ -73,8 +73,13 @@ session_start();
               <option value="5">3:00pm-4:30pm</option>
             </select>
             <?php include 'class_selection.php' ?>
+            <br><br>
+            <input type="submit" value="Add class" name="add-class">
           </form>
         </div>
+        <div>
+          <h4>Want to try teaching a new type of class?</h4>
+          <p>Ask your branch manager to add new class types!</p>
        </div>
       </div>
       <div id="tabs-2">
