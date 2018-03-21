@@ -6,6 +6,8 @@ session_start();
  <head>
    <title>Bhakti yoga. Wellness your way.</title>
    <link href="style.css" type="text/css" rel="stylesheet"/>
+   <link rel="stylesheet" type="text/css"
+     href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
    <script type="text/javascript" src="script.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <link rel="stylesheet" type="text/css" href="resources/jquery-ui-1.12.1.custom/jquery-ui.css">
@@ -89,9 +91,13 @@ $( function() {
      </div>
     </div>
     <footer>
-      <div class="container">
-            Established in 1658.
-      </div>
+      <nav>
+        <ul class="container">
+          <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
+          <li><a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+          <li><a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram fa-lg"></i></a></li>
+        <ul>
+      </nav>
     </footer>
 
  </body>

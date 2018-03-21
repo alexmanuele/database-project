@@ -86,6 +86,17 @@ nav ul{
   font-size: 18px;
   color: white;
 } */
+a:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
 .form-space{
   display: flex;
   justify-content: space-around;
