@@ -2,13 +2,14 @@
 if(!session_id())
   session_start();
 
-if(isset($_POST['add-date'])){
+if(isset($_POST['add-date']) || isset($_POST['remove-date'])){
   $servername = "db.cs.dal.ca";
   $username = "manuele";
   $password = "B00559291";
   $dbname = "manuele";
 
-  $date = $_POST['date'];
+  $date = $_SESSION['date'];
+
 // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -34,7 +35,9 @@ if(isset($_POST['add-date'])){
       echo "<option value='" . $row['Block_ID'] . "'>" . $row['Block_Description'] . "</option>";
 
     }
+    
     echo"</select>";
+
   }
 }
 $conn->close();

@@ -88,14 +88,19 @@ if(!session_id())
            <input type="submit" value="Select Date" name="add-date">
            </form>
            <?php if( isset($_POST['add-date'])){
+             $_SESSION['date'] = $_POST['date'];
              echo "<form id='class-add' method='post'>";
              include 'available.php';
+             echo "<br>";
              include 'class_selection.php';
+             echo "<br>";
              include 'teacher_selection.php';
              echo"   <br><br>
-               <input type='submit' value='Add class' name='add-class'>
+               <input type='submit' value='Add class' name='add'>
              </form>";
+
            }
+           include 'add_class.php';
           ?>
 
        </div>
@@ -104,7 +109,19 @@ if(!session_id())
             <form id="class-rm" method="post">
               <input type="text" id="datepicker3" name="date" required>
               <br><br>
+              <input type="submit" value="Choose Date" name="remove-date">
             </form>
+            <?php if (isset($_POST['remove-date'])){
+              $_SESSION['date'] = $_POST['date'];
+
+              echo"<form id='rm' method='post'>";
+              include 'class_view.php';
+              echo"<br><br>
+              <input type='submit' value='Remove Class' name='rm'>
+              </form>";
+            }
+             include 'remove_class.php';
+             ?>
          </div>
          <h4> Add a new type of class. </h4>
          <div>
