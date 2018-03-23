@@ -23,17 +23,20 @@ if(!session_id())
    <script>
    $( function() {
      $( "#datepicker" ).datepicker({
-         dateFormat: 'yy-mm-dd'
+         dateFormat: 'yy-mm-dd',
+         minDate: 0
          });
    } );
   $( function() {
     $( "#datepicker2" ).datepicker({
-        dateFormat: 'yy-mm-dd'
+        dateFormat: 'yy-mm-dd',
+        minDate: 0
         });
   } );
   $( function() {
     $( "#datepicker3" ).datepicker({
-        dateFormat: 'yy-mm-dd'
+        dateFormat: 'yy-mm-dd',
+        minDate: 0
         });
   } );
   $( function() {
@@ -181,7 +184,7 @@ if(!session_id())
             <option value="">Select..</option>
             <option value="1">Customer Report</option>
             <option value="2">Teacher Report</option>
-            <option valie="3">Class Report</option>
+            <option value="3">Class Report</option>
           </selct><br><br>
           <input type="submit" value="Get Report" name="report">
       </div>

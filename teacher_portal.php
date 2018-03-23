@@ -23,12 +23,15 @@ if($_SESSION['teacherlogon'] != 1){
    <script>
   $( function() {
     $( "#datepicker" ).datepicker({
-        dateFormat: 'yy-mm-dd'
+        dateFormat: 'yy-mm-dd',
+        minDate: 0
         });
   } );
   $( function() {
     $( "#datepicker2" ).datepicker({
-        dateFormat: 'yy-mm-dd'
+        dateFormat: 'yy-mm-dd',
+        minDate: 0
+
         });
   } );
   </script>
@@ -37,6 +40,7 @@ if($_SESSION['teacherlogon'] != 1){
    <div class="header"> <!-- title header -->
      <div class="container">
       <!--  <img src="resources/logo.png"> -->
+        <i class="fa fa-fire fa-lg"></i>
         <span>Welcome to the Teacher page. Your shedule, at your fingertips.</span>
      </div>
     </div>

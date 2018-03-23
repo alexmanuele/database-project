@@ -24,7 +24,8 @@ if(!session_id())
    <script>
    $( function() {
      $( "#datepicker" ).datepicker({
-         dateFormat: 'yy-mm-dd'
+         dateFormat: 'yy-mm-dd',
+         minDate: 0
          });
    } );
   </script>
@@ -51,7 +52,7 @@ if(!session_id())
         <li><a href="#tabs-2">Membership</a></li>
       </ul>
       <div id="tabs-1">
-        <div class="container">
+        <div class="form-container">
           <div>
            <h4>Choose a date to see the schedule and sign up!</h4>
            <form id="schedule" method="post">
