@@ -140,6 +140,7 @@ if(!session_id())
              <br><br>
              <input type="submit" value="Remove" name="remove-classtype">
            </form>
+           <?php include 'remove_classtype.php';?>
          </div>
       </div>
     </div>
