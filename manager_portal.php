@@ -82,21 +82,22 @@ if(!session_id())
        <div id="accordion">
          <h4>Add classes to the schedule.</h4>
          <div>
-          <form id="class-add" method="post">
+          <form id="class-date" method="post">
            <input type="text" id="datepicker2" name="date" required>
            <br><br>
-           <select name="class-time" method="post" required>
-             <option value="">Choose a time..</option>
-             <option value="1">6:00am-8:30am</option>
-             <option value="2">9:00am-10:30am</option>
-             <option value="3">11:00am-12:30pm</option>
-             <option value="4">1:00pm-2:30pm</option>
-             <option value="5">3:00pm-4:30pm</option>
-           </select>
-           <?php include 'class_selection.php' ?>
-           <br><br>
-           <input type="submit" value="Add class" name="add-class">
-         </form>
+           <input type="submit" value="Select Date" name="add-date">
+           </form>
+           <?php if( isset($_POST['add-date'])){
+             echo "<form id='class-add' method='post'>";
+             include 'available.php';
+             include 'class_selection.php';
+             include 'teacher_selection.php';
+             echo"   <br><br>
+               <input type='submit' value='Add class' name='add-class'>
+             </form>";
+           }
+          ?>
+
        </div>
          <h4>Remove classes from the schedule.</h4>
          <div>
