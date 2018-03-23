@@ -34,8 +34,11 @@ if(isset($_POST['sched'])){
 
     }
     echo"</select>";
-    echo"<br><br><input type='submit' value='signup' name='class-signup'></form>";
+    echo"<br><br><input type='submit' value='signup' name='signup'></form>
+    ";
   }
+
+
   $conn->close();
 
 }

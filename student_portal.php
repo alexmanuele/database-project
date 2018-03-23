@@ -65,6 +65,7 @@ if(!session_id())
           </div>
           <div>
               <?php include 'course_signup.php'?>
+              <?php include 'course_register.php';?>
           </div>
        </div>
      </div>
