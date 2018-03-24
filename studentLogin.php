@@ -7,20 +7,7 @@ if(isset($_POST["login"]))
  $studentusername =$_POST['membername'];
  $loginpassword=$_POST['studentpassword'];
 
- $servername = "db.cs.dal.ca";
- $username = "manuele";
- $password = "B00559291";
- $dbname = "manuele";
-
-
- // Create connection
- $conn = new mysqli($servername, $username, $password, $dbname);
-
-
- // Check connection
- if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
- }
+ include 'connect.php';
  //echo $studentID . "<br>";
  $sql = "SELECT * FROM Student WHERE Student_Username = '$studentusername';";
  $result = $conn->query($sql);

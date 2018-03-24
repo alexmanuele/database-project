@@ -21,19 +21,7 @@ if(isset($_POST["submit"]))
  $membership=$_POST['membership'];
  $date = date("Y-m-d");
 
-  $servername = "db.cs.dal.ca";
-  $username = "manuele";
-  $password = "B00559291";
-  $dbname = "manuele";
-
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-
-  // Check connection
-  if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-  }
+  include 'connect.php'; 
 
 //SQL Query
   $sql = "INSERT INTO Student (Student_Username, Student_FName, Student_LName, Student_Password, Membership_ID, Registration_Date)
