@@ -4,19 +4,11 @@ if(!session_id())
 if(isset($_POST["sched"]))
 {
 
-  $servername = "db.cs.dal.ca";
-  $username = "manuele";
-  $password = "B00559291";
-  $dbname = "manuele";
-
+  include 'connect.php';
+  
   $date=$_POST['date'];
   echo "<br>" . $date . "<br>";
 
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-  if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-  }
 
 //  $query = "select * from Schedule where Date = '$date';";
  $query = "

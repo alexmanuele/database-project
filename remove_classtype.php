@@ -4,20 +4,8 @@ if(!session_id())
 
   if ( isset($_POST['remove-classtype'])){
 
-    $servername = "db.cs.dal.ca";
-    $username = "manuele";
-    $password = "B00559291";
-    $dbname = "manuele";
+    include 'connect.php';
 
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-
-    // Check connection
-    if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
-    }
     $class = $_POST['class-type'];
 
 

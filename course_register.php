@@ -4,23 +4,10 @@ if(!session_id())
 
   if(isset($_POST['signup'])){
 
-    $servername = "db.cs.dal.ca";
-    $username = "manuele";
-    $password = "B00559291";
-    $dbname = "manuele";
+    include 'connect.php';
 
-    $sched = $_POST['timeblock'];
-    $stdnum = $_SESSION['studentnumber'];
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-
-    // Check connection
-    if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
-    }
-
+     $sched = $_POST['timeblock'];
+     $stdnum = $_SESSION['studentnumber'];
 
       $sql="INSERT INTO Booking (Sched_Number, Student_Number) VALUES ('$sched',
               '$stdnum');";
