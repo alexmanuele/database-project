@@ -3,7 +3,7 @@ if(!session_id())
   session_start();
 
   if ( isset($_POST['add'])){
-    
+
     $servername = "db.cs.dal.ca";
     $username = "manuele";
     $password = "B00559291";
@@ -23,7 +23,12 @@ if(!session_id())
       $time = $_POST['timeslot'];
       $date = $_SESSION['date'];
       $class = $_POST['class-type'];
-      $teach = $_POST['teacher'];
+
+      if($_SESSION['managerlogin'] === 1){
+       $teach = $_POST['teacher'];
+     }else{
+       $teach= $_SESSION['staffid'];
+     }
 
       $sql = "INSERT INTO Schedule (Sched_Date, Block_ID, Class_ID, Teacher_ID)
       VALUES ('$date', '$time', '$class', '$teach')";

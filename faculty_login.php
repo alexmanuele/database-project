@@ -23,7 +23,7 @@ if(isset($_POST["stafflogin"]))
         $_SESSION['staffid'] = $row["Teacher_ID"];
     }
   } else {
-    echo "Error <br>";
+    echo "<script>window.alert('Error');</script>";
   }
 
   //check password and go to student portal if it is correct
@@ -31,7 +31,7 @@ if(isset($_POST["stafflogin"]))
     $_SESSION["teacherlogon"] = 1;
    header('Location: teacher_portal.php');
   }
-  else{ echo "Incorrect Username or Password.";
+  else{ echo "<script>window.alert('Incorrect Username or Password.');</script>";
         echo $confirmPass;
   }
 
@@ -46,7 +46,7 @@ if(isset($_POST["stafflogin"]))
          $_SESSION["staffusername"] = $row["Manager_Username"];
      }
    } else {
-     echo "Error <br>";
+     echo "<script>window.alert('Error');</script>";
    }
 
    //check password and go to student portal if it is correct
@@ -54,9 +54,9 @@ if(isset($_POST["stafflogin"]))
      $_SESSION['managerlogin'] = 1;
     header('Location: manager_portal.php');
    }
-   else echo "Incorrect Username or Password.";
+   else echo "<script>window.alert('Incorrect Username or Password.');</script>'";
  }else {
-   echo "Incorrect Credentials. Please check and try again.";
+   echo "<script>window.alert('Incorrect Credentials. Please check and try again.');</script>'";
  }
   $conn->close();
 }
