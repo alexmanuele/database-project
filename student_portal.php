@@ -55,7 +55,7 @@ if(!session_id())
       <div id="tabs-1">
         <div class="form-container">
           <div>
-           <h4>Choose a date to see the schedule and sign up!</h4>
+           <h4>Choose a date to sign up!</h4>
            <form id="schedule" method="post">
              Date: <input type="text" id="datepicker" name="date" required>
              <br><br>
@@ -65,8 +65,35 @@ if(!session_id())
            </form>
           </div>
           <div>
+            <form id="cancel" method="post">
+              <h4>Cancel a class you've enrolled in.</h4>
+              <select name='dropclass' required>
+                <option value="">Select a class</option>
+              <?php include 'cancel.php';?>
+              </select>
+              <br><br>
+              <input type='submit' value='cancel' name='cancel'>
+            </form>
+              <?php
+              if(isset($_POST['cancel'])){
+                include 'connect.php';
+                $sql = "DELETE FROM Booking WHERE Booking_ID ='"
+                .$_POST['dropclass']."';";
+                $result = $conn->query($sql);
+                if($result === TRUE){
+                  echo"<script>window.alert('You've successfully cancelled your class.');</script>";
+
+                }else{
+                echo ('Error description: ' . mysqli_error($conn));
+                }
+                $conn->close();
+                header("Refresh: 0");
+              }?>
+          </div>
+          <div>
               <?php include 'course_signup.php'?>
               <?php include 'course_register.php';?>
+
           </div>
        </div>
      </div>

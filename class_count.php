@@ -2,17 +2,21 @@
 if(!session_id())
   session_start();
 include 'connect.php';
-$sql = "select count(Booking_ID) as count
-from Booking left join Schedule using(Sched_Number)
-where Month(Sched_date) = Month(".date('Y-m-d').")
-and  Student_Number = ". $_SESSION['studentnumber'] .";";
+$studnum = $_SESSION['studentnumber'];
+$sql = "SELECT COUNT(Booking_ID) as bk
+FROM Booking LEFT JOIN Schedule USING(Sched_Number)
+WHERE Month(Sched_date) = Month(".date('Y-m-d').")
+AND Student_Number = ". $studnum .";";
+
 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
+  echo"<script>window.alert('now this far');</script>";
    while($row = $result->fetch_assoc()) {
-       $_SESSION['classcount'] = $row["count"];
+       $_SESSION['classcount']= $row["bk"];
    }
+  echo"<script>window.alert('".$sql."');</script>";
 }
 
 $sql = "select * from Membership WHERE Membership_ID = " . $_SESSION['membership'] .";";

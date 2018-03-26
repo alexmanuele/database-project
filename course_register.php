@@ -14,8 +14,10 @@ if(!session_id())
       $result= $conn->query($sql);
       if ($result === TRUE) {
         echo "<script> window.alert('Congratulations, you successfully signed up!');</script>";
+        header("Refresh: 0");
       } else {
          echo "<p id='message'>Error: " . $sql . "<br>" . $conn->error . "</p>";
       }
     }
+    $conn->close();
 ?>

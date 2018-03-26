@@ -5,9 +5,9 @@ if(!session_id())
 if(isset($_POST['sched'])){
   $canRegister = false;
   include 'class_count.php';
-
+  echo"<script>window.alert('class count ".$_SESSION['classcount']."');</script>";
   if($_SESSION['membership'] === "1"){ //casual membership
-    echo"<script>window.alert('this far m:" . $_SESSION['classcount'] ."');</script>";
+
     if($_SESSION['classcount'] < 10){
       $canRegister = true;
 
@@ -29,17 +29,18 @@ if(isset($_POST['sched'])){
   }
 
   if($canRegister === true){
-    echo"<script>window.alert('can reg: ". $canRegister . "');</script>";
+
   echo"<h4>Choose a class and sign up today!</h4>
   <form id='class-signup' method='post'>";
 
   $date = $_POST['date'];
-
+  $studnum = $_SESSION['studentnumber'];
   include 'connect.php';
 
   $sql="SELECT * FROM Schedule LEFT JOIN Time_Block USING(Block_ID) LEFT JOIN
         Teacher USING (Teacher_ID) LEFT JOIN Class_Type USING(Class_ID)
-        WHERE Sched_Date= '$date';";
+        LEFT OUTER JOIN Booking USING(Sched_Number)
+        WHERE Sched_Date= '$date' AND (Student_Number <> ". $studnum ." OR Student_Number IS NULL);";
   $result= $conn->query($sql);
   if($result->num_rows > 0){
     echo "<select name='timeblock' required>
