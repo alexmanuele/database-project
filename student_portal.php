@@ -5,6 +5,7 @@ if(!session_id())
     header('Location: index.php');
   }
  $name = $_SESSION['firstname'];
+ $membership = $_SESSION['membership'];
  ?>
 <!DOCTYPE html>
 <html>

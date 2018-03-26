@@ -2,17 +2,9 @@
 if(!session_id())
   session_start();
 
-/*function generateStudentNum()
-{
-    static $studentNumber = 1000100;
-    $studentNumber += rand(100, 236);
-    return $studentNumber;
-} */
-
 if(isset($_POST["submit"]))
 {
 
- //$studNum = generateStudentNum();
 
  $firstname=$_POST['firstname']; //can retrieve data using $_POST from the post method used above
  $lastname=$_POST['lastname'];
@@ -21,7 +13,7 @@ if(isset($_POST["submit"]))
  $membership=$_POST['membership'];
  $date = date("Y-m-d");
 
-  include 'connect.php'; 
+  include 'connect.php';
 
 //SQL Query
   $sql = "INSERT INTO Student (Student_Username, Student_FName, Student_LName, Student_Password, Membership_ID, Registration_Date)

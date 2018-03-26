@@ -18,6 +18,7 @@ if(isset($_POST["login"]))
         $_SESSION["firstname"] = $row["Student_FName"];
         $_SESSION["memberusername"] = $row["Student_Username"];
         $_SESSION["studentnumber"] = $row["Student_Number"];
+        $_SESSION['membership'] = $row["Membership_ID"];
     }
 } else {
     echo "Error <br>";

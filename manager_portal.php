@@ -15,6 +15,7 @@ if(!session_id())
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <link rel="stylesheet" type="text/css" href="resources/jquery-ui-1.12.1.custom/jquery-ui.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
    <script>
    $( function() {
      $( "#tabs" ).tabs();
@@ -196,6 +197,8 @@ if(!session_id())
         </form>
       </div>
       <div id="tabs-4">
+       <div class="form-container">
+        <div>
         <h4>Dive in to the details.</h4>
         <p>Our system provides detailed reports so that you can run the best version of your business.</p>
         <form id="detailed" method="post">
@@ -206,7 +209,20 @@ if(!session_id())
             <option value="3">Class Report</option>
           </selct><br><br>
           <input type="submit" value="Get Report" name="report">
+        </form>
+
       </div>
+      <?php if (isset($_POST['report'])){
+        $details=$_POST['details'];
+        echo"<script>window.alert(". $details .");</script>";
+        if ($details === "1"){
+           echo"<script>window.alert(' anohter ters');</script>";
+          include 'stats.php';
+        }
+      }
+      ?>
+    </div>
+    </div>
   </div>
   <footer>
     <nav>
