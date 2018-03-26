@@ -71,7 +71,40 @@ if(!session_id())
        </div>
      </div>
       <div id="tabs-2">
-        Change membership status
+        <div class="form-container">
+         <div>
+          <h4>Review and Manage Your Membership</h4>
+          <?php include 'class_count.php';
+          if($_SESSION['membership'] === "1"){
+            $remaining = 10 - $_SESSION['classcount'];
+          }else{
+            $remaining = 20 - $_SESSION['classcount'];
+          }
+          echo "<h5>You are currently a " . $_SESSION['membertype'] . " member.</h5>";
+          if($_SESSION['membership'] != "3"){
+            if($remaining === '1'){
+              echo"<h6> You only have 1 class left this month!</h6>
+              <br><p>Upgrade your membership to enjoy more classes each month.</p>";
+            }
+            else{
+              echo "<h6>You have " . $remaining . " classes left this month!</h6>
+              <br><p>Upgrade your membership to enjoy more classes each month.</p>";
+            }
+          }
+          else{
+            echo "<h6> Enjoy unlimited classes each month at Bhakti</h6>
+            <br><p>As an Unlimited member, you can enjoy yoga as often as you like.<p>";
+          }
+          ?>
+         </div>
+         <div>
+           <h5>Change your membership status</h5>
+           <form id="membership" method="post">
+             <?php include 'membership.php';?>
+             <input type="submit" value="Change Membership" name="mem-change">
+          </form>
+          <?php include 'mem_change.php';?>
+        </div>
       </div>
   </div>
   <footer>

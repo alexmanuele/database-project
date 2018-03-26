@@ -3,21 +3,10 @@ if(!session_id())
   session_start();
 
 if(isset($_POST['add-date']) || isset($_POST['remove-date'])){
-  $servername = "db.cs.dal.ca";
-  $username = "manuele";
-  $password = "B00559291";
-  $dbname = "manuele";
 
   $date = $_SESSION['date'];
 
-// Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-
-// Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+  include 'connect.php';
 
   $sql="SELECT Block_ID, Block_Description FROM Time_Block T
   LEFT OUTER JOIN (SELECT * FROM Schedule WHERE Sched_Date = '$date') AS S
@@ -35,7 +24,7 @@ if(isset($_POST['add-date']) || isset($_POST['remove-date'])){
       echo "<option value='" . $row['Block_ID'] . "'>" . $row['Block_Description'] . "</option>";
 
     }
-    
+
     echo"</select>";
 
   }
