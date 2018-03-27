@@ -2,21 +2,10 @@
 if(!session_id())
   session_start();
 
-  $servername = "db.cs.dal.ca";
-  $username = "manuele";
-  $password = "B00559291";
-  $dbname = "manuele";
-
   $date = $_SESSION['date'];
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-
-  // Check connection
-  if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-  }
+  include 'connect.php';
+  
   $sql="SELECT * FROM Schedule LEFT JOIN Time_Block USING(Block_ID) LEFT JOIN
         Teacher USING (Teacher_ID) LEFT JOIN Class_Type USING(Class_ID)
         WHERE Sched_Date= '$date';";

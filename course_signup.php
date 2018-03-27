@@ -6,7 +6,6 @@ if(isset($_POST['sched'])){
   $canRegister = false;
   include 'class_count.php';
   $count = $_SESSION['classcount'];
-  echo"<script>window.alert('class count ".$count."');</script>";
   if($_SESSION['membership'] === "1"){ //casual membership
 
     if($count < 10){

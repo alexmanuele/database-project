@@ -30,7 +30,7 @@ if(isset($_POST["login"]))
    header('Location: student_portal.php');
    exit();
  }
- else echo "Incorrect Username or Password.";
+ else  echo"<script>window.alert('Incorrect username or password.');</script>";
 
  $conn->close();
 }

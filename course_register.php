@@ -16,7 +16,7 @@ if(!session_id())
         echo "<script> window.alert('Congratulations, you successfully signed up!');</script>";
         header("Refresh: 0");
       } else {
-         echo "<p id='message'>Error: " . $sql . "<br>" . $conn->error . "</p>";
+         echo "<script> window.alert('Something went wrong.');</script>";
       }
     }
     $conn->close();

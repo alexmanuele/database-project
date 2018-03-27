@@ -84,7 +84,8 @@ if(!session_id())
                   echo"<script>window.alert('You've successfully cancelled your class.');</script>";
 
                 }else{
-                echo ('Error description: ' . mysqli_error($conn));
+                echo "<script>window.alert('Something went wrong.');</script>";
+
                 }
                 $conn->close();
                 header("Refresh: 0");

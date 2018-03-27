@@ -16,7 +16,8 @@ if(!session_id())
       echo"<script>window.alert('You've successfully changed your membership!');</script>";
 
     }else{
-    echo ('Error description: ' . mysqli_error($conn));
+    echo "<script>window.alert('Something went wrong.');</script>";
+
     }
     header("Refresh: 0");
   $conn->close();

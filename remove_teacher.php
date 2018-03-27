@@ -16,6 +16,7 @@ if(!session_id())
 
     if ($result === TRUE) {
        echo "<script> window.alert('Teacher was removed successfully.');</script>";
+       header("Refresh: 0");
     } else {
        echo "<script> window.alert('Something went wrong.');</script>";
     }

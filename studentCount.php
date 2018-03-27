@@ -10,7 +10,8 @@ if(!session_id())
         $studcount = $row["Count"];
     }
 } else {
-     echo("Error description: " . mysqli_error($conn));
+     echo"<script>window.alert('Something went wrong.');</script>";
+
 }
 $conn->close();
 ?>

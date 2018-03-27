@@ -14,7 +14,7 @@ $result = $conn->query($sql);
 
 $data = $result->fetch_assoc();
 $count = $data['bk'];
-echo"<script>window.alert('".$count."');</script>";
+
 $_SESSION['classcount']= $data['bk'];
 
 
