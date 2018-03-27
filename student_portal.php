@@ -110,7 +110,7 @@ if(!session_id())
           }
           echo "<h5>You are currently a " . $_SESSION['membertype'] . " member.</h5>";
           if($_SESSION['membership'] != "3"){
-            if($remaining === '1'){
+            if($remaining === 1){
               echo"<h6> You only have 1 class left this month!</h6>
               <br><p>Upgrade your membership to enjoy more classes each month.</p>";
             }

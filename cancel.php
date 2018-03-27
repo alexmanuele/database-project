@@ -13,9 +13,9 @@ if($result->num_rows > 0){
 
   while($row=$result->fetch_assoc()){
       echo "<option value='" . $row['Booking_ID'] . "'>" . $row['Block_Description'] . " "
-            . $row['Class_Desc'] . " with " . $row['Teacher_FName'] . "</option>";
+            . $row['Class_Desc'] . " with " . $row['Teacher_FName'] . " on " . $row['Sched_Date']. "</option>";
 
   }
-  
+
 }
 ?>
