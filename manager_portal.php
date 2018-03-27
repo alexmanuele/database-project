@@ -216,6 +216,7 @@ if(!session_id())
         </div>
         <div id="stat-tabs-4">
           <h4>Number of classes per membership type</h4>
+          <?php include'membership_stats.php';?>
         </div>
     </div><!--stats-tabs-->
   </div><!--outer tabs 4-->

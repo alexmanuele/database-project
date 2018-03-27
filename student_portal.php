@@ -103,9 +103,9 @@ if(!session_id())
           <h4>Review and Manage Your Membership</h4>
           <?php include 'class_count.php';
           if($_SESSION['membership'] === "1"){
-            $remaining = 10 - $_SESSION['classcount'];
+            $remaining = 10 - $count;
           }else{
-            $remaining = 20 - $_SESSION['classcount'];
+            $remaining = 20 - $count;
           }
           echo "<h5>You are currently a " . $_SESSION['membertype'] . " member.</h5>";
           if($_SESSION['membership'] != "3"){

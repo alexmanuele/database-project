@@ -5,10 +5,11 @@ if(!session_id())
 if(isset($_POST['sched'])){
   $canRegister = false;
   include 'class_count.php';
-  echo"<script>window.alert('class count ".$_SESSION['classcount']."');</script>";
+  $count = $_SESSION['classcount'];
+  echo"<script>window.alert('class count ".$count."');</script>";
   if($_SESSION['membership'] === "1"){ //casual membership
 
-    if($_SESSION['classcount'] < 10){
+    if($count < 10){
       $canRegister = true;
 
     }
@@ -17,7 +18,7 @@ if(isset($_POST['sched'])){
               Please change your membership type to get more, or wait until next month.');</script>";
   }
   if($_SESSION['membership'] === "2"){ //casual membership
-    if($_SESSION['classcount'] < 20){
+    if($count < 20){
       $canRegister = true;
     }
     else
