@@ -131,6 +131,7 @@ if(!session_id())
               <br><br>
               <input type="submit" value="Add class" name="add-classtype">
             </form>
+            <?php include 'add_classtype.php';?>
          </div>
          <h4> Remove an existing class type. </h4>
          <div>
@@ -172,6 +173,7 @@ if(!session_id())
             <form id="rm-teachers" method="post">
               <?php include 'teacher_selection.php';?><br><br>
               <input type="submit" value="Remove Teacher" name="rm-teacher">
+              <?php include 'remove_teacher.php';?>
             </form>
         </div>
       </div>
@@ -181,7 +183,8 @@ if(!session_id())
          <ul>
 			      <li><a href="#stat-tabs-1">Member Joins by Month</a></li>
 			      <li><a href="#stat-tabs-2">Teacher Report</a></li>
-			      <li><a href="#stat-tabs-3">Membership Report</a></li>
+			      <li><a href="#stat-tabs-3">Customer Report</a></li>
+            <li><a href="#stat-tabs-4">Membership Report</a></li>
 			   </ul>
          <div id="stat-tabs-1" style="padding-bottom: 5.5rem;">
           <?php include 'stats.php';?>
@@ -190,6 +193,9 @@ if(!session_id())
           <?php include'teacher_report.php';?>
         </div>
         <div id="stat-tabs-3">
+          <?php include 'customer_report.php';?>
+        </div>
+        <div id="stat-tabs-4">
           <?php include'membership_stats.php';?>
         </div>
     </div><!--stats-tabs-->

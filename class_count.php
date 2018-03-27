@@ -6,9 +6,9 @@ $studnum = $_SESSION['studentnumber'];
 $date = date('Y-m-d');
 
 $sql =  "SELECT COUNT(Booking_ID) as bk FROM Booking LEFT JOIN Schedule USING(Sched_Number)
-WHERE MONTH(Sched_date) = MONTH(".$date.")
-AND Student_Number = ".$studnum.";";
-echo"<script>window.alert('".$date."');</script>";
+WHERE MONTH(Sched_date) = MONTH('$date')
+AND Student_Number = '$studnum';";
+echo"<script>window.alert('".$sql."');</script>";
 
 $result = $conn->query($sql);
 

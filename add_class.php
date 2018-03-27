@@ -27,7 +27,7 @@ if(!session_id())
       } else {
          echo "<script> window.alert('Something went wrong.');</script>";
       }
-  //  }
+
     $conn->close();
   }
 
