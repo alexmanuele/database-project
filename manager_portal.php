@@ -19,6 +19,7 @@ if(!session_id())
    <script>
    $( function() {
      $( "#tabs" ).tabs();
+     $( '#stat-tabs').tabs();
      } );
    </script>
    <script>
@@ -197,33 +198,28 @@ if(!session_id())
         </form>
       </div>
       <div id="tabs-4">
-       <div class="form-container">
-        <div>
-        <h4>Dive in to the details.</h4>
-        <p>Our system provides detailed reports so that you can run the best version of your business.</p>
-        <form id="detailed" method="post">
-          <select name="details" required>
-            <option value="">Select..</option>
-            <option value="1">Customer Report</option>
-            <option value="2">Teacher Report</option>
-            <option value="3">Class Report</option>
-          </selct><br><br>
-          <input type="submit" value="Get Report" name="report">
-        </form>
-
-      </div>
-      <?php if (isset($_POST['report'])){
-        $details=$_POST['details'];
-        echo"<script>window.alert(". $details .");</script>";
-        if ($details === "1"){
-           echo"<script>window.alert(' anohter ters');</script>";
-          include 'stats.php';
-        }
-      }
-      ?>
-    </div>
-    </div>
-  </div>
+       <div id="stat-tabs">
+         <ul>
+			      <li><a href="#stat-tabs-1">Member Joins by Month</a></li>
+			      <li><a href="#stat-tabs-2">Customer Report</a></li>
+			      <li><a href="#stat-tabs-3">Teacher Report</a></li>
+			      <li><a href="#stat-tabs-4">Membership Report</a></li>
+			   </ul>
+         <div id="stat-tabs-1" style="padding-bottom: 5.5rem;">
+          <?php include 'stats.php';?>
+        </div><!--tab1-->
+        <div id="stat-tabs-2">
+          <h4>customer report here</h4>
+        </div>
+        <div id="stat-tabs-3">
+          <h4>teacher report here</h4>
+        </div>
+        <div id="stat-tabs-4">
+          <h4>Number of classes per membership type</h4>
+        </div>
+    </div><!--stats-tabs-->
+  </div><!--outer tabs 4-->
+</div><!--main tab list-->
   <footer>
     <nav>
       <ul class="container">

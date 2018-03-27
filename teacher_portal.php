@@ -90,10 +90,6 @@ if($_SESSION['teacherlogon'] != 1){
           include 'add_class.php';
          ?>
         </div>
-        <div>
-          <h4>Want to try teaching a new type of class?</h4>
-          <p>Ask your branch manager to add new class types!</p>
-       </div>
      </div>
     </div>
       <div id="tabs-2">
@@ -108,11 +104,11 @@ if($_SESSION['teacherlogon'] != 1){
           <select name="subject" required>
             <option value="">About..</option>
             <option value="1">Class Type</option>
-            <option value="2">Day of the Week</option>
-            <option value="3">Time Block</option>
+            <option value="2">Time Block</option>
           </select><br><br>
           <input type="submit" value="Show Me!" name="submit">
         </form>
+        <?php include 'teacher_stat.php'?>
       </div>
   </div>
   <footer>

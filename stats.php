@@ -4,7 +4,6 @@ if(!session_id())
 
   include 'connect.php';
 
- echo"<script>window.alert('you got  this far');</script>";
  $sql = "SELECT COUNT(*) AS bCount FROM Student WHERE MONTH(Student.Registration_Date)=MONTH('2018-01-15');";
  $result = $conn->query($sql);
  if ($result->num_rows > 0) {
