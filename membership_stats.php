@@ -31,7 +31,10 @@ if(!session_id())
           ]);
 
         var options = {
-          title: 'Percentage of Bookings by Membership Type'
+          title: 'Percentage of Bookings by Membership Type',
+          width: 600,
+          height: 400,
+          slices: [{offset: 0.1}, {offset:0.1}, {offset:0.1}],
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));

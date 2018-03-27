@@ -66,8 +66,7 @@ if(!session_id())
       <ul>
         <li><a href="#tabs-1">Manage Classes</a></li>
         <li><a href="#tabs-2">Manage Staff</a></li>
-        <li><a href="#tabs-3">Statistics</a></li>
-        <li><a href="#tabs-4">Detailed Reports</a></li>
+        <li><a href="#tabs-3">Reports</a></li>
       </ul>
       <div id="tabs-1">
        <div class="form-container">
@@ -178,44 +177,19 @@ if(!session_id())
       </div>
     </div>
       <div id="tabs-3">
-        <h4>Keep tabs on your business.</h4>
-        <p> Make use of our database to see useful information about classes and teachers.</p>
-        <form id="class-info" method="post">
-          <select name="statistic" required>
-            <option value="">Show me...</option>
-            <option value="1">Most popular</option>
-            <option value="2">Least popular</option>
-          </select>
-          <select name="subject" required>
-            <option value="">About..</option>
-            <option value="1">Class Type</option>
-            <option value="2">Day of the Week</option>
-            <option value="3">Time Block</option>
-            <option value="4">Teacher</option>
-            <option value="5">Month for new members</option>
-          </select><br><br>
-          <input type="submit" value="Show Me!" name="submit">
-        </form>
-      </div>
-      <div id="tabs-4">
        <div id="stat-tabs">
          <ul>
 			      <li><a href="#stat-tabs-1">Member Joins by Month</a></li>
-			      <li><a href="#stat-tabs-2">Customer Report</a></li>
-			      <li><a href="#stat-tabs-3">Teacher Report</a></li>
-			      <li><a href="#stat-tabs-4">Membership Report</a></li>
+			      <li><a href="#stat-tabs-2">Teacher Report</a></li>
+			      <li><a href="#stat-tabs-3">Membership Report</a></li>
 			   </ul>
          <div id="stat-tabs-1" style="padding-bottom: 5.5rem;">
           <?php include 'stats.php';?>
         </div><!--tab1-->
         <div id="stat-tabs-2">
-          <h4>customer report here</h4>
+          <?php include'teacher_report.php';?>
         </div>
         <div id="stat-tabs-3">
-          <h4>teacher report here</h4>
-        </div>
-        <div id="stat-tabs-4">
-          <h4>Number of classes per membership type</h4>
           <?php include'membership_stats.php';?>
         </div>
     </div><!--stats-tabs-->

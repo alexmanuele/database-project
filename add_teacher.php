@@ -28,7 +28,7 @@ if(isset($_POST["add-teacher"]))
 
 //SQL Query
   $sql = "INSERT INTO Teacher (Teacher_FName, Teacher_LName, Teacher_Username, Teacher_Password)
-  VALUES ('$firstname', '$lastname', '$signupname', '$signuppassword')"; //use the vars as values for the Query
+  VALUES ('$firstname', '$lastname', '$signupname', '$signuppassword');"; //use the vars as values for the Query
 
   $result = $conn->query($sql);
 

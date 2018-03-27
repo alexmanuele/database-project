@@ -18,7 +18,7 @@ if(!session_id())
      }
 
       $sql = "INSERT INTO Schedule (Sched_Date, Block_ID, Class_ID, Teacher_ID)
-      VALUES ('$date', '$time', '$class', '$teach')";
+      VALUES ('$date', '$time', '$class', '$teach');";
 
       $result = $conn->query($sql);
 
