@@ -17,7 +17,7 @@ if(isset($_POST["submit"]))
 
 //SQL Query
   $sql = "INSERT INTO Student (Student_Username, Student_FName, Student_LName, Student_Password, Membership_ID, Registration_Date)
-  VALUES ('$signupname', '$firstname', '$lastname', '$signuppassword', '$membership', '$date')"; //use the vars as values for the Query
+  VALUES ('$signupname', '$firstname', '$lastname', '$signuppassword', '$membership', '$date');"; //use the vars as values for the Query
 
   $result = $conn->query($sql);
 
